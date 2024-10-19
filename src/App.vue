@@ -11,7 +11,7 @@
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" id="password" class="form-control" v-model="userData.password">
+            <input type="password" id="password" class="form-control" v-model.lazy="userData.password">
           </div>
           <div class="mb-3">
             <label for="age" class="form-label">Age</label>
@@ -23,7 +23,7 @@
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
           <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea id="message" rows="5" class="form-control"></textarea>
+            <textarea id="message" rows="5" class="form-control" v-model="message"></textarea>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
             <p>Mail:{{userData.email}}</p>
             <p>Password:{{userData.password}}</p>
             <p>Age:{{userData.age}}</p>
-            <p>Message: </p>
+            <p style="white-space: pre-line">Message:{{message}}</p>
             <p><strong>Send Mail?</strong></p>
             <ul>
               <li></li>
@@ -106,7 +106,8 @@ export default {
         email: '',
         password: '',
         age: 0,
-      }
+      },
+      message: ''
     }
   }
 }
